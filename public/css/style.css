@@ -92,12 +92,19 @@ body {
 
 .navbar-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Изменено на space-between */
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+/* Новый контейнер для левой части */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .logo {
@@ -107,6 +114,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .logo i {
@@ -136,6 +144,7 @@ body {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -159,6 +168,7 @@ body {
     width: 100%;
 }
 
+/* Правая часть навигации */
 .auth-links {
     display: flex;
     gap: 15px;
@@ -172,6 +182,7 @@ body {
     padding: 8px 15px;
     border-radius: 30px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .auth-link:hover {
@@ -187,7 +198,6 @@ body {
     background: var(--accent-light);
     transform: translateY(-2px);
 }
-
 /* ========== ГЛАВНАЯ СТРАНИЦА ========== */
 .profile-section {
     display: flex;
@@ -691,7 +701,34 @@ textarea.form-control {
     color: var(--text-secondary);
     font-size: 14px;
 }
+/* тут имг */
+.photo-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--accent), #4a0000);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /* ========== АДАПТИВНОСТЬ ========== */
 @media (max-width: 768px) {
     .navbar-content {
@@ -749,6 +786,32 @@ textarea.form-control {
         width: 100%;
         justify-content: center;
     }
+     .navbar-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar-left {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin: 10px 0;
+        justify-content: center;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .auth-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -774,5 +837,20 @@ textarea.form-control {
     
     .footer-content {
         flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .auth-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .auth-link {
+        text-align: center;
+        margin: 0;
     }
 }

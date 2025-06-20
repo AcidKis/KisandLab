@@ -17,8 +17,8 @@
         <div class="card">
             <div class="profile-section">
                 <div class="profile-photo">
-                    <div class="photo-placeholder">
-                        <i class="fas fa-user"></i>
+                    <div class="photo-container avatar-sm">
+                        <img src="{{ asset('img/andrey.jpeg') }}" alt="User Avatar">
                     </div>
                 </div>
                 <div class="skills-section">
