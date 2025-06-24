@@ -17,20 +17,21 @@
                 <p>Войдите в свой аккаунт, чтобы продолжить</p>
             </div>
             
-            <form>
+            <form action="{{ route('login') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Введите ваш email">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Введите ваш email">
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" placeholder="Введите пароль">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Введите пароль">
                 </div>
                 
                 <div class="form-group">
                     <div class="remember">
-                        <input type="checkbox" id="remember">
+                        <input type="checkbox" id="remember" name="remember">
                         <label for="remember">Запомнить меня</label>
                     </div>
                     <a href="#" class="forgot-password">Забыли пароль?</a>

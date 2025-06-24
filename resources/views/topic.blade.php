@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     @include('layouts.header')
 
@@ -19,7 +21,7 @@
                     <span>24</span>
                 </div>
             </div>
-            
+
             <div class="topic-meta">
                 <div class="rating">
                     <i class="fas fa-star"></i>
@@ -34,10 +36,10 @@
                     <span>156</span>
                 </div>
             </div>
-            
+
             <div class="topic-content">
                 <p>Оптимизация запросов MySQL - критически важный навык для любого backend-разработчика, работающего с базами данных. В этой статье мы рассмотрим основные методы оптимизации SQL-запросов, которые помогут значительно повысить производительность вашего приложения.</p>
-                
+
                 <h2>Использование индексов</h2>
                 <p>Индексы - это первое, на что следует обратить внимание при оптимизации запросов. Правильно созданные индексы могут ускорить выполнение запросов в сотни раз. Основные типы индексов в MySQL:</p>
                 <ul>
@@ -46,18 +48,20 @@
                     <li>INDEX - обычный индекс</li>
                     <li>FULLTEXT - для полнотекстового поиска</li>
                 </ul>
-                
+
                 <h2>Анализ выполнения запросов</h2>
                 <p>Команда EXPLAIN - ваш лучший друг при оптимизации запросов. Она показывает, как MySQL выполняет запрос, какие индексы использует и в каком порядке обрабатывает таблицы.</p>
-                
+
                 <h2>Оптимизация структуры таблиц</h2>
                 <p>Правильная нормализация данных, выбор оптимальных типов данных для колонок и использование правильных движков хранения (InnoDB vs MyISAM) также играют важную роль в производительности.</p>
             </div>
-            
+
             <div class="topic-author">
                 <div class="profile-header">
-                    <div class="photo-placeholder small">
-                        <i class="fas fa-user"></i>
+                    <div class="photo-container avatar-sm">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <div>
                         <h3>Алексей Смирнов</h3>
@@ -66,10 +70,10 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="card comments-section">
             <h2 class="section-title">Комментарии (24)</h2>
-            
+
             <div class="comment-form">
                 <h3>Оставить комментарий</h3>
                 <form>
@@ -79,7 +83,7 @@
                     <button type="submit" class="btn">Отправить</button>
                 </form>
             </div>
-            
+
             <div class="comment-list">
                 <div class="comment">
                     <div class="comment-header">
@@ -98,7 +102,7 @@
                         <a href="#" class="btn btn-secondary">Ответить</a>
                         <a href="#" class="btn btn-secondary"><i class="fas fa-thumbs-up"></i> 12</a>
                     </div>
-                    
+
                     <div class="comment-reply">
                         <div class="comment-header">
                             <div class="comment-avatar">
@@ -114,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="comment">
                     <div class="comment-header">
                         <div class="comment-avatar">
@@ -140,4 +144,5 @@
     @include('layouts.footer')
     <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
+
 </html>

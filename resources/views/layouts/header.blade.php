@@ -10,12 +10,16 @@
             </div>
         </div>
         <div class="auth-links">
+            @auth
             <a href="{{ route('profile') }}" class="nav-link {{ request()->is('profile') ? 'active' : '' }}">Профиль</a>
-            <a href="#" class="auth-link">Выйти</a>
-
-            <a href="{{ route('login') }}" class="auth-link">Войти</a>
-            <a href="{{ route('register') }}" class="auth-link register">Зарегистрироваться</a>
-
+            <form action="{{ route('logout') }}" method="POST" style="display:inline;" class="nav-link">
+                @csrf
+                <button type="submit" class="nav-link">Выйти</button>
+            </form>
+            @else
+            <a href="{{ route('login') }}" class="nav-link">Войти</a>
+            <a href="{{ route('register') }}" class="nav-link register">Зарегистрироваться</a>
+            @endauth
         </div>
     </div>
 </nav>

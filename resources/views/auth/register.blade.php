@@ -17,25 +17,26 @@
                 <p>Присоединяйтесь к нашему сообществу разработчиков</p>
             </div>
             
-            <form>
+            <form action="{{ route('register') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="name">Имя</label>
-                    <input type="text" id="name" class="form-control" placeholder="Введите ваше имя">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя">
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Введите ваш email">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Введите ваш email">
                 </div>
                 
                 <div class="form-group">
                     <label for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" placeholder="Создайте пароль">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Создайте пароль">
                 </div>
                 
                 <div class="form-group">
                     <label for="password_confirmation">Подтвердите пароль</label>
-                    <input type="password" id="password_confirmation" class="form-control" placeholder="Повторите пароль">
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Повторите пароль">
                 </div>
                 
                 <button type="submit" class="btn">Зарегистрироваться</button>
