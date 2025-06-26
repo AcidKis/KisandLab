@@ -1,14 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Forum\PostList;
 
 Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/forum', function () {
-    return view('forum');
-})->name('forum');
+Route::get('/forum', [PostList::class, 'index'])->name('forum');
 
 Route::get('/topic', function () {
     return view('topic');
