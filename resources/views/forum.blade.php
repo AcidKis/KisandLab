@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <p class="topic-excerpt">{{ $post->short_description }}</p>
-                <button class="btn-details">Подробнее</button>
+                <a href="{{ route('forumDetail', $post->id) }}" class="btn-details">Подробнее</a>
             </div>
             @endforeach
         </div>

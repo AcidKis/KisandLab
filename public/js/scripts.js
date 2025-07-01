@@ -1,23 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Анимация кнопок
-    const buttons = document.querySelectorAll('.btn-details, .btn');
     
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            if (this.classList.contains('btn-details')) {
-                e.preventDefault();
-                this.textContent = 'Переход...';
-                this.style.backgroundColor = '#4a0000';
-                
-                setTimeout(() => {
-                    this.textContent = 'Подробнее';
-                    this.style.backgroundColor = '';
-                    // Здесь будет переход на страницу темы
-                    window.location.href = '/topic';
-                }, 1000);
-            }
-        });
-    });
     
     // Анимация при загрузке
     const cards = document.querySelectorAll('.topic-card, .card, .header-card');
